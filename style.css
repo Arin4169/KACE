@@ -1,0 +1,499 @@
+/* 공통 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* 영문 폰트 적용 */
+.gnb a {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+    color: #333;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s;
+    padding: 0.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.impact h2,
+.business h2,
+.visual-content h2 {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 헤더 스타일 */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem 1rem 1rem;  /* top right bottom left */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 32gpx;
+    font-weight: 700;
+    color: #333;
+    text-decoration: none;
+}
+
+.gnb ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.gnb a:hover {
+    color: #B285CE;
+}
+
+.gnb a:active {
+    color: #B285CE;
+}
+
+.gnb a.active {
+    color: #B285CE;
+    position: relative;
+}
+
+.gnb a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 2px;
+    background-color: #B285CE;
+}
+
+/* 메인 비주얼 스타일 */
+.main-visual {
+    position: relative;
+    height: 100vh;
+    background: url('images/hiro.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.main-visual::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.visual-content {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    color: #fff;
+    z-index: 1;
+}
+
+.visual-content h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.visual-content p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* 임팩트 섹션 스타일 */
+.impact {
+    padding: 8rem 2rem;
+    background: #fff;
+    text-align: center;
+}
+
+.impact h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-weight: 700;
+}
+
+.impact-desc {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+}
+
+.impact-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.impact-item {
+    padding: 2.5rem 1.5rem;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.impact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.impact-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.impact-item:nth-child(1) .impact-icon {
+    background: rgba(0, 174, 239, 0.1);
+    color: #00AEEF;
+}
+
+.impact-item:nth-child(2) .impact-icon {
+    background: rgba(255, 88, 139, 0.1);
+    color: #FF588B;
+}
+
+.impact-item:nth-child(3) .impact-icon {
+    background: rgba(108, 92, 231, 0.1);
+    color: #6C5CE7;
+}
+
+.impact-item:nth-child(4) .impact-icon {
+    background: rgba(46, 213, 115, 0.1);
+    color: #2ED573;
+}
+
+.impact-icon i {
+    font-size: 2rem;
+}
+
+.impact-item h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.impact-item p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    word-break: keep-all;
+}
+
+/* 비즈니스 섹션 스타일 */
+.business {
+    padding: 6rem 2rem;
+    text-align: center;
+    position: relative;
+    background: url('images/program.jpg') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+}
+
+.business::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);  /* 0.7에서 0.4로 투명도 증가 */
+    z-index: 1;
+}
+
+.business h2,
+.business-desc,
+.business-grid {
+    position: relative;
+    z-index: 2;
+}
+
+.business h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.business-desc {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    font-size: 1.1rem;
+    color: #fff;
+    line-height: 1.8;
+}
+
+.business-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+}
+
+.business-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.business-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.icon-wrapper {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.business-icon {
+    width: 40px;
+    height: 40px;
+    color: #fff;
+}
+
+.business-item h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.business-item p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+/* 푸터 스타일 */
+.footer {
+    background-color: #1A1A2E;
+    color: #fff;
+    padding: 30px 0;
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-info {
+    margin-bottom: 15px;
+}
+
+.footer-info h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.footer-info p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: normal;
+}
+
+.footer-info .contact-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 5px 0;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-info .label {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 200;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+}
+
+.footer-info strong {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    margin-left: 4px;
+}
+
+.footer-info .contact-info .divider {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 12px;
+}
+
+.footer-info .business-info,
+.footer-info .cafe-info {
+    font-size: 14px;
+    margin: 5px 0;
+    letter-spacing: -0.02em;
+}
+
+.copyright {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: left;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* EXPERTS 섹션 스타일 */
+.experts {
+    padding: 8rem 2rem;
+    background: #f8f9fa;
+}
+
+.experts h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    color: #333;
+    font-weight: 700;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+}
+
+.experts-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    row-gap: 4rem;
+}
+
+.expert-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: visible;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+.expert-card:hover {
+    transform: translateY(-10px);
+}
+
+.expert-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1.5rem;
+    border: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.expert-info {
+    padding: 1rem;
+    text-align: center;
+}
+
+.expert-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.expert-field {
+    font-size: 1.1rem;
+    color: #B285CE;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.expert-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    word-break: keep-all;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 1024px) {
+    .business-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .experts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .visual-content h2 {
+        font-size: 2.5rem;
+    }
+    
+    .impact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .business-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gnb {
+        display: none;
+    }
+    .experts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .expert-image {
+        height: 250px;
+    }
+} 
