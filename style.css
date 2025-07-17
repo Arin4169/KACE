@@ -275,7 +275,7 @@ body {
 
 .business-item {
     background: rgba(255, 255, 255, 0.1);
-    padding: 2rem;
+    padding: 2.5rem 2rem;
     border-radius: 10px;
     backdrop-filter: blur(5px);
     transition: all 0.3s ease;
@@ -289,7 +289,7 @@ body {
 .icon-wrapper {
     width: 80px;
     height: 80px;
-    margin: 0 auto 1.5rem;
+    margin: 0 auto 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -306,13 +306,160 @@ body {
 .business-item h3 {
     font-size: 1.5rem;
     color: #fff;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 .business-item p {
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.9);
     line-height: 1.6;
+}
+
+/* 비즈니스 아이템 링크 스타일 */
+.business-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+/* 서브 비주얼 스타일 */
+.sub-visual {
+    position: relative;
+    height: 400px;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 80px;
+}
+
+/* 각 서브페이지별 배경 이미지 */
+.sub-visual.facilitation {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/sub1.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.sub-visual.sdgs {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/sub2.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.sub-visual.leadership {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/sub3.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.sub-visual.digital {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/sub4.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.sub-visual .visual-content {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    color: #fff;
+    z-index: 1;
+}
+
+.sub-visual h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+}
+
+.sub-visual p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+/* 프로그램 상세 스타일 */
+.program-detail {
+    padding: 3rem 2rem 6rem;
+    background: #f8f9fa;
+}
+
+.program-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.program-card {
+    background: #fff;
+    padding: 2.5rem 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(178, 133, 206, 0.3);
+}
+
+.program-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 2rem;
+    background: rgba(178, 133, 206, 0.1);
+    color: #B285CE;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.program-icon i {
+    font-size: 2rem;
+}
+
+.program-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.program-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 2rem;
+    text-align: center;
+    word-break: keep-all;
+    line-height: 1.6;
+}
+
+.program-features {
+    list-style: none;
+    padding: 0;
+}
+
+.program-features li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.3;
+}
+
+.program-features li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 6px;
+    height: 6px;
+    background: #B285CE;
+    border-radius: 50%;
 }
 
 /* 푸터 스타일 */
@@ -405,7 +552,7 @@ body {
 }
 
 .experts-grid {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -419,7 +566,7 @@ body {
     overflow: visible;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    padding: 2rem 1.5rem;
+    padding: 1.5rem 1.5rem;
     text-align: center;
 }
 
@@ -428,47 +575,120 @@ body {
 }
 
 .expert-image {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    margin: 0 auto 1.5rem;
+    margin: 0 auto 1rem;
     border: 5px solid #fff;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .expert-info {
-    padding: 1rem;
+    padding: 0.5rem;
     text-align: center;
 }
 
 .expert-name {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
     color: #333;
 }
 
 .expert-field {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #B285CE;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     font-weight: 500;
 }
 
 .expert-description {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #666;
-    line-height: 1.6;
+    line-height: 1.5;
     word-break: keep-all;
 }
 
-/* 반응형 스타일 */
+/* 프로그램 이미지 갤러리 스타일 */
+.program-gallery {
+    padding: 6rem 2rem;
+    background: #f8f9fa;
+}
+
+.gallery-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.program-gallery h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: #333;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: #fff;
+}
+
+.gallery-caption h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.gallery-caption p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* 갤러리 반응형 스타일 */
 @media (max-width: 1024px) {
     .business-grid {
         grid-template-columns: repeat(2, 1fr);
     }
     .experts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .program-inner {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -496,4 +716,124 @@ body {
     .expert-image {
         height: 250px;
     }
+    .sub-visual {
+        height: 300px;
+    }
+
+    .sub-visual h2 {
+        font-size: 2.5rem;
+    }
+
+    .program-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .program-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item img {
+        height: 250px;
+    }
+
+    .program-gallery h2 {
+        font-size: 2rem;
+    }
+} 
+
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+}
+
+.section-title p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.8;
+    word-break: keep-all;
+}
+
+/* 반응형에서 제목 스타일 조정 */
+@media (max-width: 768px) {
+    .section-title {
+        margin-bottom: 3rem;
+    }
+
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    .section-title p {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+} 
+
+.program-title {
+    padding: 6rem 2rem 2rem;
+    text-align: center;
+}
+
+.title-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.program-title h2 {
+    font-size: 2.8rem;
+    color: #333;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.program-title p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.8;
+    word-break: keep-all;
+}
+
+/* 프로그램 상세 섹션 스타일 수정 */
+.program-detail {
+    padding: 0 2rem 6rem;
+    background: #fff;
+}
+
+.program-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-top: 0rem;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+    .program-inner {
+        margin-top: 1.5rem;
+    }
+    
+    .program-title h2,
+    .program-gallery h2 {
+        margin-bottom: 1.5rem;
+    }
+} 
+
+/* 프로그램 이미지 갤러리 스타일 */
+.program-gallery {
+    padding: 6rem 2rem;
+    background: #f8f9fa;
 } 
