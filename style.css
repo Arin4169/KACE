@@ -279,6 +279,7 @@ body {
     border-radius: 10px;
     backdrop-filter: blur(5px);
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .business-item:hover {
@@ -321,6 +322,9 @@ body {
     color: inherit;
     display: block;
     height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 2;
 }
 
 /* 서브 비주얼 스타일 */
@@ -836,4 +840,18 @@ body {
 .program-gallery {
     padding: 6rem 2rem;
     background: #f8f9fa;
+} 
+
+/* 모바일 환경 대응 */
+@media (max-width: 768px) {
+    .business-link {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .business-item {
+        width: 100%;
+    }
 } 
