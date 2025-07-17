@@ -206,19 +206,21 @@
         </div>
     </footer>
     <script>
-        // 메뉴 활성화 기능
         document.addEventListener('DOMContentLoaded', function() {
             const menuItems = document.querySelectorAll('.gnb a');
+            const gnb = document.querySelector('.gnb');
             
+            // 메뉴 활성화
             menuItems.forEach(item => {
                 item.addEventListener('click', function(e) {
-                    // 현재 active 클래스를 가진 항목에서 제거
-                    menuItems.forEach(menuItem => {
-                        menuItem.classList.remove('active');
-                    });
-                    
-                    // 클릭된 항목에 active 클래스 추가
-                    this.classList.add('active');
+                    if (!item.closest('.submenu')) {
+                        menuItems.forEach(menuItem => {
+                            if (!menuItem.closest('.submenu')) {
+                                menuItem.classList.remove('active');
+                            }
+                        });
+                        this.classList.add('active');
+                    }
                 });
             });
 
@@ -226,7 +228,7 @@
             const hash = window.location.hash;
             if (hash) {
                 const activeMenu = document.querySelector(`.gnb a[href="${hash}"]`);
-                if (activeMenu) {
+                if (activeMenu && !activeMenu.closest('.submenu')) {
                     activeMenu.classList.add('active');
                 }
             }
