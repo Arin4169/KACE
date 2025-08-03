@@ -24,7 +24,15 @@
             <nav class="gnb">
                 <ul>
                     <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#program">PROGRAM</a></li>
+                    <li class="has-submenu">
+                        <a href="javascript:void(0)">PROGRAM</a>
+                        <ul class="submenu">
+                            <li><a href="facilitation.html">퍼실리테이션</a></li>
+                            <li><a href="sdgs.html">SDGs 교육</a></li>
+                            <li><a href="leadership.html">여성리더십</a></li>
+                            <li><a href="digital.html">디지털리터러시</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#experts">EXPERTS</a></li>
                     <li><a href="#news">NEWS</a></li>
                     <li><a href="#contact">CONTACT</a></li>
@@ -130,7 +138,7 @@
                             <path fill="currentColor" d="M22 18V3H2v15H0v2h24v-2h-2zm-8 0h-4v-1h4v1zm6-3H4V5h16v10z"/>
                         </svg>
                     </div>
-                    <h3>디지털문해교육</h3>
+                    <h3>디지털리터러시</h3>
                     <p>디지털 시대에 필요한<br>핵심 역량을 키웁니다</p>
                 </a>
             </div>
@@ -214,18 +222,29 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const menuItems = document.querySelectorAll('.gnb a');
-            const gnb = document.querySelector('.gnb');
+            const programMenu = document.querySelector('.has-submenu > a');
             
-            // 메뉴 활성화
-            menuItems.forEach(item => {
-                item.addEventListener('click', function(e) {
-                    if (!item.closest('.submenu')) {
-                        menuItems.forEach(menuItem => {
-                            if (!menuItem.closest('.submenu')) {
-                                menuItem.classList.remove('active');
-                            }
-                        });
-                        this.classList.add('active');
+            // PROGRAM 메뉴 클릭 이벤트
+            programMenu.addEventListener('click', function(e) {
+                e.preventDefault();
+                const parent = this.parentElement;
+                parent.classList.toggle('active');
+                
+                // 다른 메뉴 클릭 시 서브메뉴 닫기
+                document.addEventListener('click', function(e) {
+                    if (!parent.contains(e.target)) {
+                        parent.classList.remove('active');
+                    }
+                });
+            });
+
+            // 서브메뉴 항목 클릭 시 부모 메뉴의 active 클래스 제거
+            const submenuItems = document.querySelectorAll('.submenu a');
+            submenuItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const parent = this.closest('.has-submenu');
+                    if (parent) {
+                        parent.classList.remove('active');
                     }
                 });
             });
