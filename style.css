@@ -854,6 +854,14 @@ body {
     .visual-content h2 {
         font-size: 2rem;
     }
+}
+
+/* 실제 모바일 기기 대응 */
+@media (max-width: 480px) {
+    .visual-content h2 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
     
     .impact-grid {
         grid-template-columns: 1fr;
